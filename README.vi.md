@@ -1,3 +1,5 @@
+**Ngôn ngữ:** [English](README.md) | Tiếng Việt
+
 # Orimise API: hướng dẫn bắt đầu
 
 > Tạo tài khoản, lấy API key và gửi request đầu tiên tới Orimise AI Gateway.
@@ -126,7 +128,7 @@ curl https://api.orimise.com/v1beta/models/YOUR_MODEL_ID:generateContent \
   }'
 ```
 
-Streaming được hỗ trợ bằng SSE. Với Chat Completions, thêm `"stream": true` vào JSON body và đọc các dòng `data:` cho đến sentinel kết thúc của stream.
+Streaming được hỗ trợ bằng SSE. Với Chat Completions, thêm `"stream": true` vào JSON body và đọc các dòng `data:` cho đến `data: [DONE]`.
 
 ## 6. Endpoint và URL
 
