@@ -38,7 +38,7 @@ Mở trình duyệt và truy cập: **[https://orimise.com](https://orimise.com)
 
 Tại trang chủ, nhấn nút **"Bắt đầu"** ở góc trên bên phải (hoặc nút **"Bắt đầu ngay →"** ở giữa trang).
 
-*(Ảnh minh họa: `images/01_homepage.png` trong repo)*
+
 
 ### 1.2. Điền thông tin đăng ký
 
@@ -53,7 +53,7 @@ Bạn sẽ được chuyển đến trang đăng ký tại `orimise.com/register
 
 Sau khi điền xong, nhấn nút **"Tạo tài khoản →"**.
 
-*(Ảnh minh họa: `images/02_register.png` trong repo)*
+
 
 > **💡 Lưu ý:** Nếu email đã được đăng ký nhưng chưa xác thực, hệ thống sẽ tự gửi lại mã OTP mới.
 
@@ -69,7 +69,7 @@ Sau khi nhấn **"Tạo tài khoản"**, hệ thống sẽ gửi **mã OTP 6 ch�
 
 Trang web sẽ tự động chuyển đến màn hình xác thực. Nhập 6 chữ số OTP vào các ô trống rồi nhấn **"Xác thực →"**.
 
-*(Ảnh minh họa: `images/03_otp.png` trong repo)*
+
 
 **Một số lưu ý quan trọng:**
 
@@ -94,7 +94,7 @@ Tài khoản mới tạo sẽ có **số dư $0.0000**. Để bắt đầu sử 
 
 Từ sidebar bên trái, nhấn vào **"Thanh toán"** (hoặc truy cập trực tiếp: `orimise.com/dashboard/billing`).
 
-*(Ảnh minh họa: `images/05_billing.png` trong repo)*
+
 
 ### 3.2. Nhập mã coupon
 
@@ -130,7 +130,7 @@ API Key là "chìa khóa" để xác thực khi gọi API. Hệ thống đã t�
 
 Từ sidebar, nhấn vào **"API Keys"** (hoặc truy cập: `orimise.com/dashboard/keys`).
 
-*(Ảnh minh họa: `images/06_api_keys.png` trong repo)*
+
 
 Tại đây bạn sẽ thấy:
 
@@ -215,7 +215,7 @@ Bạn cũng có thể test API ngay trên Dashboard mà không cần terminal:
 2. Chọn model muốn test từ dropdown (GPT-5, Claude, Gemini,...)
 3. Nhấn nút **"▶ Run"** để gọi API ngay trên trang
 
-*(Ảnh minh họa: `images/04_dashboard.png` trong repo)*
+
 
 ---
 
@@ -290,7 +290,7 @@ print(message.content[0].text)
 
 Truy cập **"Mô hình"** từ sidebar (hoặc: `orimise.com/dashboard/models`) để xem toàn bộ model khả dụng và bảng giá.
 
-*(Ảnh minh họa: `images/07_models.png` trong repo)*
+
 
 ### Model phổ biến
 

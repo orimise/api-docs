@@ -30,11 +30,11 @@ Orimise AI Gateway provides multiple AI models through one API key. It supports 
 
 Open the [Orimise AI Gateway sign-up page](https://aigateway.orimise.com/register). Enter your email and a password of at least 8 characters, confirm your password, then accept the Terms of Service and Privacy Policy.
 
-*(Ảnh minh họa: `images/02_register.png` trong repo)*
+
 
 If you already have an account, use the [sign-in page](https://aigateway.orimise.com/login).
 
-*(Ảnh minh họa: `images/03_login.png` trong repo)*
+
 
 ## 2. Verify your email
 
@@ -157,7 +157,7 @@ Every request requires an `Authorization: Bearer YOUR_ORIMISE_API_KEY` header. A
 
 The dashboard's [Integration Guides](https://aigateway.orimise.com/dashboard/guides) generate setup instructions for Claude Code, Codex CLI, Gemini CLI, OpenCode, Grok Build, CC Switch, and OpenClaw. They include Bash, PowerShell, and Windows CMD options.
 
-*(Ảnh minh họa: `images/04_api_overview.png` trong repo)*
+
 
 ## 7. Balance, models, and pricing
 
@@ -167,7 +167,7 @@ The dashboard's [Integration Guides](https://aigateway.orimise.com/dashboard/gui
 
 Pricing depends on the model and usage. Do not use prices in articles or old screenshots for estimates; check the dashboard before deploying.
 
-*(Ảnh minh họa: `images/05_model_pricing.png` trong repo)*
+
 
 ## 8. Troubleshooting
 

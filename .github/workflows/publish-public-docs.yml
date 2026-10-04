@@ -1,0 +1,50 @@
+# Copied from orimise/docs-portal docs/ci/publish-public-docs.yml on 2026-10-04; space is fixed per repository.
+#
+# Pushes the ODF-1 guides under docs/public/ to Orimise Docs after every change
+# on the main branch. The job is an editor, not an admin: a new guide lands as
+# internal and an admin makes it public once on docs.orimise.com; later runs
+# keep that decision.
+#
+# Secrets: DOCS_PUBLISH_TOKEN (the same value as in devops/services/docs/.env.production).
+
+name: Publish public docs
+
+on:
+  push:
+    branches: [main, master]
+    paths:
+      - "docs/public/**"
+      - ".github/workflows/publish-public-docs.yml"
+  workflow_dispatch:
+
+concurrency:
+  group: publish-public-docs
+  cancel-in-progress: false
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+
+      # The script has no dependencies. Pin DOCS_PORTAL_REF to a commit of the
+      # docs-portal repository once this workflow is stable.
+      - name: Fetch publisher script
+        env:
+          DOCS_PORTAL_REF: main
+        run: |
+          curl -fsSL -o publish-public-docs.mjs \
+            "https://raw.githubusercontent.com/orimise/docs-portal/${DOCS_PORTAL_REF}/scripts/publish-public-docs.mjs"
+
+      - name: Dry run
+        run: node publish-public-docs.mjs --dir docs/public --space ai-gateway --dry-run
+
+      - name: Publish
+        env:
+          DOCS_PUBLISH_TOKEN: ${{ secrets.DOCS_PUBLISH_TOKEN }}
+        run: node publish-public-docs.mjs --dir docs/public --space ai-gateway
