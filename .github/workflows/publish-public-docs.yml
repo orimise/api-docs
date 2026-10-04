@@ -15,6 +15,7 @@ on:
     paths:
       - "docs/public/**"
       - ".github/workflows/publish-public-docs.yml"
+      - ".github/scripts/publish-public-docs.mjs"
   workflow_dispatch:
 
 concurrency:
@@ -32,19 +33,12 @@ jobs:
         with:
           node-version: "22"
 
-      # The script has no dependencies. Pin DOCS_PORTAL_REF to a commit of the
-      # docs-portal repository once this workflow is stable.
-      - name: Fetch publisher script
-        env:
-          DOCS_PORTAL_REF: main
-        run: |
-          curl -fsSL -o publish-public-docs.mjs \
-            "https://raw.githubusercontent.com/orimise/docs-portal/${DOCS_PORTAL_REF}/scripts/publish-public-docs.mjs"
-
+      # The script is vendored from orimise/docs-portal scripts/publish-public-docs.mjs
+      # (commit 139ca89); that repository is private, so it cannot be fetched at run time.
       - name: Dry run
-        run: node publish-public-docs.mjs --dir docs/public --space ai-gateway --dry-run
+        run: node .github/scripts/publish-public-docs.mjs --dir docs/public --space ai-gateway --dry-run
 
       - name: Publish
         env:
           DOCS_PUBLISH_TOKEN: ${{ secrets.DOCS_PUBLISH_TOKEN }}
-        run: node publish-public-docs.mjs --dir docs/public --space ai-gateway
+        run: node .github/scripts/publish-public-docs.mjs --dir docs/public --space ai-gateway
