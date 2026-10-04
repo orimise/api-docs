@@ -13,7 +13,7 @@ review_by: '2027-04-04'
 
 > Từ đăng ký tài khoản đến gọi API đầu tiên chỉ trong **vài phút**.
 
-Orimise là nền tảng API AI hợp nhất — cho phép bạn truy cập **20+ mô hình AI** (GPT-5, Claude Opus, Gemini Pro,...) qua **một API duy nhất**, tương thích hoàn toàn với OpenAI, Anthropic và Gemini SDK.
+Orimise là nền tảng API AI hợp nhất — cho phép bạn truy cập **gần 30 mô hình AI** (GPT 5.x/6, Claude Sonnet/Opus, Gemini Flash/Pro,...) qua **một API duy nhất**, tương thích hoàn toàn với OpenAI, Anthropic và Gemini SDK.
 
 ---
 
@@ -175,7 +175,7 @@ curl -X POST https://api.orimise.com/v1/chat/completions \
   -H "Authorization: Bearer sk-your-api-key-here" \
   -H "Content-Type: application/json" \
   -d '{
-    "model": "gpt-5",
+    "model": "gpt-5.5",
     "messages": [
       {"role": "user", "content": "Xin chào! Bạn là ai?"}
     ]
@@ -188,7 +188,7 @@ curl -X POST https://api.orimise.com/v1/chat/completions \
 {
   "id": "chatcmpl-abc123",
   "object": "chat.completions",
-  "model": "gpt-5",
+  "model": "gpt-5.5",
   "choices": [
     {
       "index": 0,
@@ -212,7 +212,7 @@ curl -X POST https://api.orimise.com/v1/chat/completions \
 Bạn cũng có thể test API ngay trên Dashboard mà không cần terminal:
 
 1. Tại **Bảng điều khiển**, tìm phần **"Quick Start"**
-2. Chọn model muốn test từ dropdown (GPT-5, Claude, Gemini,...)
+2. Chọn model muốn test từ dropdown (GPT 5.5, Claude, Gemini,...)
 3. Nhấn nút **"▶ Run"** để gọi API ngay trên trang
 
 
@@ -234,7 +234,7 @@ client = OpenAI(
 )
 
 response = client.chat.completions.create(
-    model="gpt-5",
+    model="gpt-5.5",
     messages=[
         {"role": "user", "content": "Xin chào!"}
     ]
@@ -296,11 +296,14 @@ Truy cập **"Mô hình"** từ sidebar (hoặc: `orimise.com/dashboard/models`)
 
 | Model | Provider | Input/1M tokens | Output/1M tokens |
 |-------|----------|-----------------|-------------------|
-| GPT-5 | OpenAI | $2.00 | $10.00 |
-| Claude Sonnet 4.6 | Anthropic | $3.00 | $15.00 |
-| Gemini 2.5 Flash | Google | $0.30 | $2.50 |
-| Gemini 2.5 Flash Lite | Google | $0.15 | $1.25 |
-| Claude Opus 4.6 Thinking | Anthropic | $5.00 | $25.00 |
+| GPT 6 Sol (`gpt-6-sol`) | OpenAI | $2.00 | $10.00 |
+| GPT 5.5 (`gpt-5.5`) | OpenAI | $5.00 | $30.00 |
+| Claude Sonnet 4.6 (`claude-sonnet-4-6`) | Anthropic | $3.00 | $15.00 |
+| Claude Opus 4.6 (`claude-opus-4-6`) | Anthropic | $5.00 | $25.00 |
+| Gemini 2.5 Flash (`gemini-2.5-flash`) | Google | $0.50 | $3.50 |
+| Gemini 2.5 Flash Lite (`gemini-2.5-flash-lite`) | Google | $0.15 | $1.25 |
+
+Giá theo bảng công khai ngày 04/10/2026; bảng trong Dashboard là nguồn chính xác tại mọi thời điểm.
 
 > Bạn có thể **bật/tắt** từng model bằng toggle trên trang Mô hình.
 
@@ -317,7 +320,7 @@ Bạn có thể nạp thêm bằng cách:
 Có rate limit để đảm bảo chất lượng dịch vụ. Thông thường đủ cho hầu hết use case.
 
 ### ❓ Tôi có thể dùng model nào?
-Tất cả model hiển thị tại trang **Mô hình** đều khả dụng. Hiện hỗ trợ **18+ model** từ OpenAI, Anthropic và Google.
+Tất cả model hiển thị tại trang **Mô hình** đều khả dụng. Hiện có **28 model** từ OpenAI, Anthropic và Google (tháng 10/2026); gọi `GET /v1/models` bằng API key để lấy danh sách đúng cho tài khoản của bạn.
 
 ### ❓ API key bị lộ thì sao?
 Vào trang **API Keys** → nhấn **"Thu hồi"** ngay để vô hiệu hóa key cũ → tạo key mới.
@@ -326,7 +329,7 @@ Vào trang **API Keys** → nhấn **"Thu hồi"** ngay để vô hiệu hóa ke
 Có! Thêm `"stream": true` vào request body:
 ```json
 {
-  "model": "gpt-5",
+  "model": "gpt-5.5",
   "stream": true,
   "messages": [{"role": "user", "content": "Hello"}]
 }
@@ -350,4 +353,4 @@ Có! Thêm `"stream": true` vào request body:
 
 ---
 
-*Cần hỗ trợ? Liên hệ qua [Trò chuyện AI](https://orimise.com) trên dashboard hoặc email support@orimise.com.*
+*Cần hỗ trợ? Email support@orimise.com.*
