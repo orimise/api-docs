@@ -13,7 +13,7 @@ review_by: '2027-04-04'
 
 > Từ đăng ký tài khoản đến gọi API đầu tiên chỉ trong **vài phút**.
 
-Orimise là nền tảng API AI hợp nhất — cho phép bạn truy cập **gần 30 mô hình AI** (GPT 5.x/6, Claude Sonnet/Opus, Gemini Flash/Pro,...) qua **một API duy nhất**, tương thích hoàn toàn với OpenAI, Anthropic và Gemini SDK.
+Orimise là nền tảng API AI hợp nhất — cho phép bạn truy cập **hơn 30 mô hình AI** (GPT 5.x/6, Claude Sonnet/Opus, Gemini Flash/Pro,...) qua **một API duy nhất**, tương thích hoàn toàn với OpenAI, Anthropic và Gemini SDK.
 
 ---
 
@@ -320,7 +320,7 @@ Bạn có thể nạp thêm bằng cách:
 Có rate limit để đảm bảo chất lượng dịch vụ. Thông thường đủ cho hầu hết use case.
 
 ### ❓ Tôi có thể dùng model nào?
-Tất cả model hiển thị tại trang **Mô hình** đều khả dụng. Hiện có **28 model** từ OpenAI, Anthropic và Google (tháng 10/2026); gọi `GET /v1/models` bằng API key để lấy danh sách đúng cho tài khoản của bạn.
+Tất cả model hiển thị tại trang **Mô hình** đều khả dụng. Hiện có **32 model** từ OpenAI, Anthropic và Google (18/10/2026); gọi `GET /v1/models` bằng API key để lấy danh sách đúng cho tài khoản của bạn.
 
 ### ❓ API key bị lộ thì sao?
 Vào trang **API Keys** → nhấn **"Thu hồi"** ngay để vô hiệu hóa key cũ → tạo key mới.
